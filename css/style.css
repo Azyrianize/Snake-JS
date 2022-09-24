@@ -4,3 +4,84 @@
  box-sizing: border-box;
 }
 
+h1
+{
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+h2
+{
+	font-size: 25px;
+	border-bottom: 1px solid black;
+	padding: 3px;
+	margin-bottom: 10px;
+}
+
+p
+{
+	font-weight: 700;
+	padding: 5px;
+}
+
+#start
+{
+	width: 70%;
+	padding: 5px;
+	font-weight: 700;
+}
+
+#wrap
+{
+	background-color: darkgray;
+	height: 600px;
+}
+
+#container
+{
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 300px;
+
+}
+
+#game
+{
+	width: 70%;
+	height: 100%;
+	background-color: white;
+	float: left;
+	text-align: center;
+	padding: 10px;
+}
+
+.board
+{
+	height: 300px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(20, 1fr);
+}
+
+.board_element
+{
+	background-color: red;
+	margin: 1px;
+}
+
+.snake
+{
+	background-color: black;
+}
+
+#panel
+{
+	width: 30%;
+	height: 100%;
+	background-color: lightblue;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	padding: 10px;
+}
