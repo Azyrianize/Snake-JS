@@ -23,17 +23,31 @@
 	
 		<div id="game">
 			<span id="logo"><a href="#"><img src="img/snakelogo.jpeg" alt="Snake Logo"></a></span>
+			<span id="gameOver"><a href="#"><img src="img/gameover.png" alt="Game Over"></a></span>
 		</div>
 		
 		<div id="panel">
-			<h2>MENU</h2>
-			<p>Player: Guest</p>
-			<p>Points: 0</p>
-			<p>Record: 0</p>
+			<div id="guestPanel">
+				<h2>SNAKE</h2>
+				<p>Hello player!</p>
+				<p>Join in and have fun in the snake world!</p>
+				<p>To start the game just type in your nickname below:</p>
+				
+				<input type="text" id="txtNickname"></br>	
+				<input type="button" id="buttonSubmit" value="Submit"></input>
+
+			</div>
 			
-			<button id="start" class="menuButton ">Start Game!</button>
-			<button id="end" class="menuButton" disabled="true">End Game</button>
-		
+			<div id ="playerPanel">
+				<h2>MENU</h2>
+				<p>Player: <span id="player"></span></p>
+				<p>Points: <span id="points"></span></p>
+				<p>Max Points: <span id="maxPoints"></span></p>
+				
+				<button id="start" class="menuButton ">Start Game!</button>
+				<button id="end" class="menuButton" disabled="true">End Game</button>
+				<button id="changePlayer" class="menuButton">Change Player</button>
+			</div>
 		</div>
 	</div>
     

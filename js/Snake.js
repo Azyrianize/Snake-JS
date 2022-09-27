@@ -5,6 +5,7 @@ class Snake {
 		this._snakeDirection;
 		this._snakeElements = this.initSnake();
 		this._foodElement = 0;
+		this._foodPoints = 0;
 		this._gameIntervalID = 0;	
 	}
 
@@ -13,12 +14,20 @@ class Snake {
 	}
 	
 	getSnakeElements = function(){
-		console.log(this._snakeElements);
 		return this._snakeElements;
 	}
 	
 	setFood = function(value){
 		return this._foodElement = value;
+	}
+	
+	addFoodPoints = function(value){
+		this._foodPoints = this._foodPoints + value;
+		return this._foodPoints;
+	}
+	
+	getFoodPoints = function(){
+		return this._foodPoints;
 	}
 	
 	getFood = function(){
@@ -96,6 +105,7 @@ class Snake {
 		let snakeElements = this.getSnakeElements();
 		let snakeStart = true;
 		let that = this;
+		
 			
 		let gameInterval = setInterval(function(){
 				if(snakeStart){
@@ -112,8 +122,12 @@ class Snake {
 				
 				if(that.isGameOver(nextX, nextY))
 				{
+					const gameOver = document.getElementById("gameOver");
 					console.log(nextX, nextY);
 					that.stopMoveSnake();
+					gameOver.style.display = "block";
+					gameOver.style.height = "100%";						
+					game.endGame();
 				}
 				else {
 					const nextSnakeElement = document.querySelector(`[data-x="${nextX}"][data-y="${nextY}"]`);	
@@ -125,10 +139,12 @@ class Snake {
 						snakeElements.pop().classList.remove("snake");	
 					} else {
 						that.getFood().classList.remove("food");
+						that.addFoodPoints(1);
+						points.innerHTML = that.getFoodPoints();
 						game.createFood();
 					}
 				}
-		}, 200);	
+		}, 100);	
 		
 	}
 	

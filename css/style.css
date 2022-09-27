@@ -78,7 +78,6 @@ p
 .board_element
 {
 	background-color: red;
-	margin: 1px;
 }
 
 .snake
@@ -91,11 +90,19 @@ p
 	background-color: yellow;
 }
 
-#game img
+#game #logo img
 {
 	display: block;
 	width: 100%;
 	height: 100%;
+}
+
+#game #gameOver
+{
+	display: none;
+	width: 100%;
+	height: 100%;	
+	overflow:hidden;
 }
 
 #panel
@@ -107,4 +114,34 @@ p
 	float: left;
 	text-align: center;
 	padding: 10px;
+}
+
+#questPanel p
+{
+	font-size: 20px;
+}
+
+#nicknameForm
+{
+	
+}
+
+#txtNickname
+{
+	margin: 10px;
+	padding: 5px;
+	font-size: 16px;
+	color: gray;
+}
+
+#buttonSubmit
+{
+	padding: 5px;
+	font-size: 16px;
+	color: black;
+}
+
+#playerPanel
+{
+	display: none;
 }
