@@ -8,7 +8,7 @@ class Game {
 		
 		this.startButton.addEventListener('click', this.startGame.bind(this));
 		this.endButton.addEventListener('click', this.endGame.bind(this));
-		this.changePlayerButton.addEventListener('click', this.changePlayer.bind(this));
+		//this.changePlayerButton.addEventListener('click', this.changePlayer.bind(this));
 		
 		let _snake;
 		let _score;
