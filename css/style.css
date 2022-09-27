@@ -7,14 +7,18 @@
 h1
 {
 	text-align: center;
+	letter-spacing: 10px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	font-size: 36px;
+	font-weight: 900;
+	color: #00008B;
 }
 
 h2
 {
 	font-size: 25px;
-	border-bottom: 1px solid black;
+	border-bottom: 2px solid black;
 	padding: 3px;
 	margin-bottom: 10px;
 }
@@ -25,25 +29,32 @@ p
 	padding: 5px;
 }
 
-#start
+.menuButton
 {
 	width: 70%;
 	padding: 5px;
 	font-weight: 700;
+	background-color: #FF8C00;
+	margin-bottom: 5px;
+}
+
+.menuButton:hover
+{
+	opacity: 0.8;
 }
 
 #wrap
 {
-	background-color: darkgray;
-	height: 600px;
+	background-color: #E9967A;
+	height: 100vh;
 }
 
 #container
 {
 	margin-left: 20px;
 	margin-right: 20px;
-	height: 300px;
-
+	height: 500px;
+	border: 4px solid black;
 }
 
 #game
@@ -53,12 +64,12 @@ p
 	background-color: white;
 	float: left;
 	text-align: center;
-	padding: 10px;
+	border-right: 4px solid black;
 }
 
 .board
 {
-	height: 300px;
+	height: 100%;
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(20, 1fr);
@@ -75,11 +86,23 @@ p
 	background-color: black;
 }
 
+.food
+{
+	background-color: yellow;
+}
+
+#game img
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
 #panel
 {
 	width: 30%;
 	height: 100%;
-	background-color: lightblue;
+	background-color: #D3D3D3;
 	display: inline-block;
 	float: left;
 	text-align: center;
