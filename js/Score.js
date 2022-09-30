@@ -5,6 +5,7 @@ class Score {
 		this._player = "";
 		this._points = 0;
 		this._maxPoints = 0;
+		this._topListPlayers;
 
 		this.buttonSubmit = document.getElementById("buttonSubmit");
 		this.buttonSubmit.addEventListener('click', this.playerJoined.bind(this));
@@ -52,6 +53,10 @@ class Score {
 		}
 		
 		game.renderScore();
+	}
+	
+	addTopList(){
+		
 	}
 	
 }

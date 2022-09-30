@@ -5,10 +5,14 @@ class Game {
 		this.startButton = document.getElementById('start')
 		this.endButton = document.getElementById('end')
 		this.changePlayerButton = document.getElementById('changePlayer')
+		this.topListButton = document.getElementById('topList')
+		this.returnButton = document.getElementById('returnButton')
 		
 		this.startButton.addEventListener('click', this.startGame.bind(this));
 		this.endButton.addEventListener('click', this.endGame.bind(this));
-		//this.changePlayerButton.addEventListener('click', this.changePlayer.bind(this));
+		this.changePlayerButton.addEventListener('click', this.changePlayer.bind(this));
+		this.topListButton.addEventListener('click', this.checkTopList.bind(this));
+		this.returnButton.addEventListener('click', this.leaveTopList.bind(this));
 		
 		let _snake;
 		let _score;
@@ -93,6 +97,7 @@ class Game {
 		gameOver.style.display = "none";
 		this.startButton.disabled = true;
 		this.endButton.disabled = false;
+		this.changePlayerButton.disabled = true;
 		this.renderBoard();
 		this.showScore();
 		const snake = new Snake();
@@ -109,6 +114,7 @@ class Game {
 		
 		this.startButton.disabled = false;
 		this.endButton.disabled = true;
+		this.changePlayerButton.disabled = false;
 		
 		boardElements.forEach(boardElement => {boardElement.remove()});
 		board.classList.remove("board");
@@ -122,17 +128,33 @@ class Game {
 		this.getSnake().stopMoveSnake();
 		this.setSnake(null);
 	}
-	
+		
 	changePlayer(){
 		const guestPanel = document.getElementById("guestPanel");
 		const playerPanel = document.getElementById("playerPanel");
-
-		this.setSnake(null);
-		this.setScore(null);
-		guestPanel.style.display = "block";
-		playerPanel.style.display = "none";
-
 		
+		guestPanel.style.display = "block";
+		playerPanel.style.display = "none";	
+	}
+	
+	checkTopList(){
+		const guestPanel = document.getElementById("guestPanel");
+		const playerPanel = document.getElementById("playerPanel");	
+		const topListPanel = document.getElementById("topListPanel");	
+		
+		guestPanel.style.display = "none";
+		playerPanel.style.display = "none";	
+		topListPanel.style.display = "block";
+	}
+	
+	leaveTopList(){
+		const guestPanel = document.getElementById("guestPanel");
+		const playerPanel = document.getElementById("playerPanel");	
+		const topListPanel = document.getElementById("topListPanel");	
+		
+		guestPanel.style.display = "none";
+		playerPanel.style.display = "block";	
+		topListPanel.style.display = "none";
 	}
 	
 	createFood(){
